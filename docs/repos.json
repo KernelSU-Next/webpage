@@ -342,5 +342,37 @@
         "kernel_name": "fusionX_sm8250",
         "kernel_link": "https://github.com/SenseiiX/fusionX_sm8250",
         "devices": "Poco F4 (munch)"
+    },
+    {
+        "maintainer": "306bobby-android",
+        "img": "https://avatars.githubusercontent.com/306bobby-android?v=4",
+        "maintainer_link": "https://github.com/306bobby-android",
+        "kernel_name": "android_kernel_google_redbull",
+        "kernel_link": "https://github.com/crdroidandroid/android_kernel_google_redbull/tree/15.0-ksunsusfs",
+        "devices": "Pixel 5 Series | Snapdragon 765G"
+    },
+    {
+        "maintainer": "midozalouk",
+        "img": "https://avatars.githubusercontent.com/midozalouk?v=4",
+        "maintainer_link": "https://github.com/midozalouk",
+        "kernel_name": "android_kernel_oneplus_sm8150",
+        "kernel_link": "https://github.com/midozalouk/android_kernel_oneplus_sm8150",
+        "devices": "Oneplus 7 , 7T , 7Pro , 7T pro"
+    },
+    {
+        "maintainer": "maazm7d",
+        "img": "https://avatars.githubusercontent.com/maazm7d?v=4",
+        "maintainer_link": "https://github.com/maazm7d",
+        "kernel_name": "kernel_samsung_a12",
+        "kernel_link": "https://github.com/maazm7d/kernel_samsung_a12",
+        "devices": "Samsung Galaxy A12 (A127F) | Exynos 850"
+    },
+    {
+        "maintainer": "0xSoul24",
+        "img": "https://avatars.githubusercontent.com/0xSoul24?v=4",
+        "maintainer_link": "https://github.com/0xSoul24",
+        "kernel_name": "kernel_google_msm-4.14",
+        "kernel_link": "https://github.com/0xSoul24/kernel_google_msm-4.14/tree/vic",
+        "devices": "Pixel 4/4XL (flame and coral)"
     }
 ]

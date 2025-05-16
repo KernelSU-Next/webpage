@@ -30,7 +30,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github',  link: 'https://github.com/KernelSU-Next' },
-      { icon: 'telegram', link: 'https://t.me/ksunext_group' }
+      { icon: 'telegram', link: 'https://t.me/ksunext' }
     ]
   }
 })

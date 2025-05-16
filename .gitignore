@@ -4,3 +4,5 @@ manager
 userspace
 kernel
 node_modules
+docs/.vitepress/dist
+docs/.vitepress/cache
