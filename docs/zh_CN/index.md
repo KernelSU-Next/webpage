@@ -19,10 +19,10 @@ hero:
       link: https://github.com/KernelSU-Next/KernelSU-Next
 
 features:
-  - 标题：非 GKI 内核支持
-详情：4.x - 5.4 版本支持非 GKI 内核，且采用 LTS 模式（3.x 版本为实验性版本）
-- 标题：GKI 内核支持
-详情：5.10 - 6.6 版本支持 GKI 内核，且采用 GKI 模式（6.6 及以上版本为实验性版本）
+  - title: 非 GKI 内核支持
+    details: 4.x - 5.4 版本支持非 GKI 内核，且采用 LTS 模式（3.x 版本为实验性版本）
+  - title: GKI 内核支持
+    details: 5.10 - 6.6 版本支持 GKI 内核，且采用 GKI 模式（6.6 及以上版本为实验性版本）
   - title: 动态模块挂载
     details: 支持 Magic Mount 和 OverlayFS 两种模块挂载模式，可根据喜好通过设置轻松切换
   - title: 全新设计的管理器
