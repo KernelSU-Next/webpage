@@ -120,11 +120,11 @@
         "devices": "Samsung Galaxy F23 and M23 (m23xq)"
     },
     {
-        "maintainer": "pys36",
-        "img": "https://avatars.githubusercontent.com/pys36?v=4",
-        "maintainer_link": "https://github.com/pys36",
+        "maintainer": "Oscar1640",
+        "img": "https://avatars.githubusercontent.com/Oscar1640?v=4",
+        "maintainer_link": "https://github.com/Oscar1640",
         "kernel_name": "android_kernel_xiaomi_earth",
-        "kernel_link": "https://github.com/pys36/android_kernel_xiaomi_earth",
+        "kernel_link": "https://github.com/Oscar1640/android_kernel_xiaomi_earth",
         "devices": "Redmi 12C (earth), Poco C55 (aether)"
     },
     {
