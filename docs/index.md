@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: Installation
-      link: /installation
+      link: pages/installation
     - theme: alt
       text: Github
       link: https://github.com/KernelSU-Next/KernelSU-Next

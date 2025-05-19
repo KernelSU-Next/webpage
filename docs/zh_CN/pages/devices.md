@@ -7,7 +7,7 @@
 > 这些内核未经过 KernelSU Next 团队审查，请在使用前自行确保其安全性！
 
 <script setup>
-import data from '../repos.json'
+import data from '../../repos.json'
 </script>
 
 <table>
