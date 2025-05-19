@@ -9,16 +9,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/zh_CN/' },
-      { text: '安装', link: '/zh_CN/internals/installation' },
-      { text: '设备', link: '/zh_CN/internals/devices' }
+      { text: '安装', link: '/zh_CN/installation' },
+      { text: '设备', link: '/zh_CN/devices' }
     ],
     
     sidebar: [
       {
         text: 'Guide',
         items: [
-          { text: '安装', link: '/zh_CN/internals/installation' },
-          { text: '设备', link: '/zh_CN/internals/devices' }
+          { text: '安装', link: '/zh_CN/installation' },
+          { text: '设备', link: '/zh_CN/devices' }
         ]
       }
     ],

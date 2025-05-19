@@ -7,7 +7,7 @@
 > In this page, there are kernels for devices unofficially supporting KernelSU Next, maintained by other developers. So, be cautious about what you are flashing!
 
 <script setup>
-import data from '../repos.json'
+import data from '/repos.json'
 </script>
 
 <table>
