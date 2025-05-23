@@ -8,16 +8,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Installation', link: '/internals/installation' },
-      { text: 'Devices', link: '/internals/devices' }
+      { text: 'Installation', link: '/pages/installation' },
+      { text: 'Devices', link: '/pages/devices' }
     ],
     
     sidebar: [
       {
         text: 'Guide',
         items: [
-          { text: 'Installation', link: '/internals/installation' },
-          { text: 'Devices', link: '/internals/devices' }
+          { text: 'Installation', link: '/pages/installation' },
+          { text: 'Devices', link: '/pages/devices' }
         ]
       }
     ],
