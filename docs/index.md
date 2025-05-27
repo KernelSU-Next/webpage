@@ -43,4 +43,6 @@ features:
     details: Backup and restore SU permission allowlist for all apps you previously given, useful to restore all the SU permissions you previously allowed on different device or setup
   - title: SuSFS Controls & Info
     details: Get compatibility/basic info for SuSFS & Controls for KPROBES hooks hiding mode
+  - title: WebUI X
+    details: WebUI X is an innovative way to manage WebUIs, which has a lot more system level APIs the module/webui developers can elevate for their needs, it also has monet support for seamless Material U look all around
 

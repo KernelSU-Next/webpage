@@ -43,4 +43,6 @@ features:
     details: 备份和恢复所有授予超级用户权限的 APP 列表及其 APP Profile 配置，妈妈再也不用担心配置丢失了！
   - title: SuSFS 运行控制
     details: 获取 SuSFS 的运行状态（如有）以及操作 KPROBES 钩子隐藏模式
+  - title:
+    details: WebUI X 是一种管理 WebUI 的创新方法，它拥有更多系统级 API，模块/WebUI 开发者可以根据自身需求进行升级，同时还支持无缝衔接的 Material U 界面。
 
