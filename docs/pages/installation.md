@@ -4,7 +4,8 @@
 Copy, paste and run! Easy integration CLI commands
 
 >[!note]
->Run the following commands in the kernel source code root directory according to your needs Please note: the Dev branch has not been fully tested and may not be suitable for most device environments. If you find a bug, please fix it yourself or submit an issue to the developer.
+>Run the following commands in the kernel source code root directory according to your needs.  
+***Attention: the Dev branch has not been fully tested and may not be suitable for most device environments. If you find a bug, please fix it yourself or submit an issue to the developer.***
 
 ### KernelSU Next
 ::: code-group
