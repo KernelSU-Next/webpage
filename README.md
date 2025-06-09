@@ -1,4 +1,4 @@
 # KernelSU Next Website  
 
 ## Official Website  
-[KSUNext.org](https://ksunext.org)
+[kernelsu-next.github.io/webpage/](https://kernelsu-next.github.io/webpage/)
