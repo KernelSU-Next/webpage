@@ -375,4 +375,12 @@
         "kernel_link": "https://github.com/0xSoul24/kernel_google_msm-4.14/tree/vic",
         "devices": "Pixel 4/4XL (flame and coral)"
     }
+    {
+        "maintainer": "duhansysl",
+        "img": "https://avatars.githubusercontent.com/duhansysl?v=4",
+        "maintainer_link": "https://github.com/duhansysl/exynos9810-kernel",
+        "kernel_name": "exynos9810-kernel",
+        "kernel_link": "https://github.com/duhansysl/exynos9810-kernel",
+        "devices": "Samsung Galaxy S9/S9+/Note9 Exynos (G960X, G965X, N960X)"
+    }
 ]
