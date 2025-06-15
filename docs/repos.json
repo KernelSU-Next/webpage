@@ -374,7 +374,7 @@
         "kernel_name": "kernel_google_msm-4.14",
         "kernel_link": "https://github.com/0xSoul24/kernel_google_msm-4.14/tree/vic",
         "devices": "Pixel 4/4XL (flame and coral)"
-    }
+    },
     {
         "maintainer": "duhansysl",
         "img": "https://avatars.githubusercontent.com/duhansysl?v=4",
