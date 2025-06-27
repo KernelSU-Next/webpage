@@ -382,5 +382,37 @@
         "kernel_name": "exynos9810-kernel",
         "kernel_link": "https://github.com/duhansysl/exynos9810-kernel",
         "devices": "Samsung Galaxy S9/S9+/Note9 Exynos (G960X, G965X, N960X)"
+    },
+    {
+        "maintainer": "MrShockWAVEE",
+        "img": "https://avatars.githubusercontent.com/MrShockWAVEE?v=4",
+        "maintainer_link": "https://github.com/MrShockWAVEE/",
+        "kernel_name": "Proton_Kernel_Xioami_MT6768",
+        "kernel_link": "https://github.com/MrShockWAVEE/Proton_Kernel_Xioami_MT6768",
+        "devices": "Lancelot (Redmi 9) & Merlin (Redmi Note 9)"
+    },
+    {
+        "maintainer": "skglab-dev",
+        "img": "https://avatars.githubusercontent.com/skglab-dev?v=4",
+        "maintainer_link": "https://github.com/skglab-dev/",
+        "kernel_name": "kernel_xiaomi_rodin",
+        "kernel_link": "https://github.com/skglab-dev/kernel_xiaomi_rodin",
+        "devices": "POCO X7 Pro"
+    },
+    {
+        "maintainer": "maazm7d",
+        "img": "https://avatars.githubusercontent.com/maazm7d?v=4",
+        "maintainer_link": "https://github.com/maazm7d/",
+        "kernel_name": "kernel_samsung_m12",
+        "kernel_link": "https://github.com/maazm7d/kernel_samsung_m12",
+        "devices": "Samsung M12 (M127F)"
+    },
+    {
+        "maintainer": "xfwdrev",
+        "img": "https://avatars.githubusercontent.com/xfwdrev?v=4",
+        "maintainer_link": "https://github.com/xfwdrev/",
+        "kernel_name": "android_kernel_samsung_ex2100",
+        "kernel_link": "https://github.com/xfwdrev/android_kernel_samsung_ex2100",
+        "devices": "Samsung Galaxy S21 Family (Exynos 2100, SM-G99x)"
     }
 ]
