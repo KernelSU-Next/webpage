@@ -1,19 +1,21 @@
 # Installation
 
-## Easy Integration 
-Copy, paste and run! Easy integration CLI commands
+## Easy integration
+
+Copy, paste, and run! Easy-to-integrate CLI commands.
 
 >[!note]
->Run the following commands in the kernel source code root directory according to your needs.  
-***Attention: the Dev branch has not been fully tested and may not be suitable for most device environments. If you find a bug, please fix it yourself or submit an issue to the developer.***
+>Run the following commands from the root directory of your kernel source, as needed.  
+Warning: the `Dev` branch hasn't been fully tested and may not be suitable for most devices. If you find any bug, feel free to fix them yourself or submit an issue to the developer.
 
 ### KernelSU Next
+
 ::: code-group
 ```sh [Latest release]
 curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -
 ```
 
-```sh [Next branch (dev)]
+```sh [next branch (dev)]
 curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s next
 ```
 

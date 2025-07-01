@@ -6,7 +6,7 @@ title: Home
 hero:
   name: "KernelSU Next"
   text: "An advanced kernel-based root solution for Android"
-  tagline: Supports kernel 4.4 - 6.6 (Non-GKI & GKI)
+  tagline: Supports kernels 4.4 - 6.6 (Non-GKI & GKI)
   image:
     src: /logo.png
     alt: "KernelSU Next"
@@ -15,34 +15,33 @@ hero:
       text: Installation
       link: pages/installation
     - theme: alt
-      text: Github
+      text: GitHub
       link: https://github.com/KernelSU-Next/KernelSU-Next
 
 features:
   - title: Non-GKI kernel support
-    details: Non-GKI kernel support from 4.x - 5.4 with LTS mode (3.x is experimental)
+    details: Supports non-GKI kernels from 4.x - 5.4 with LTS mode (3.x is experimental).
   - title: GKI kernel support
-    details: GKI kernels support from 5.10 - 6.6 with GKI mode (6.6+ is experimental)
+    details: Supports GKI kernels from 5.10 - 6.6 with GKI mode (6.6+ is experimental).
   - title: Dynamic module mount
-    details: Includes both Magic Mount and OverlayFS, which can be switched from the settings with a single toggle
+    details: Includes support for Magic Mount and OverlayFS, which can be switched from the settings with a single toggle.
   - title: New manager features
-    details: Manager app has a new, redesigned look with several feature improvements and a UI overhaul
-  - title: Module backup & restoration
-    details: Allows for backup and restoration of modules, whether they were uninstalled accidentally, you changed your mind, or you simply want to restore a specific backup
-  - title: Auto-updates
-    details: Manager app updates automatically with new releases
+    details: The manager app features a redesigned interface with several improvements and a complete UI overhaul.
+  - title: Module backup & restore
+    details: Allows backup and restoration of modules, whether they were accidentally uninstalled, you changed your mind, or want to restore a specific backup.
+  - title: Automatic updates
+    details: The manager app updates automatically with each new release.
   - title: Frequent updates
-    details: Frequently updated with lots of upcoming features
+    details: Regularly updated with many upcoming features and improvements.
   - title: Hide hosts
-    details: Hides hosts file modifications from detectors using app profile unmount, allowing you to use ad blockers without any hassle
+    details: Hides hosts file modifications from detectors using App Profile unmount, allowing ad blockers to work seamlessly.
   - title: Bulk installation
-    details: Bulk install multiple modules at once, select all the modules you want and everything will be installed in serial
+    details: Install multiple modules at once, select all desired modules and they'll be installed sequentially.
   - title: Custom image size
-    details: Customizable OverlayFS sparse image size to whatever value that suits your needs, default size is 6GB
-  - title: SU Allowlist backup & restoration
-    details: Backup and restore SU permission allowlist for all apps you previously given, useful to restore all the SU permissions you previously allowed on different device or setup
-  - title: SuSFS Controls & Info
-    details: Get compatibility/basic info for SuSFS & Controls for KPROBES hooks hiding mode
+    details: Customize the size of the OverlayFS sparse image to suit your needs. The default size is 6 GB.
+  - title: SU allowlist backup & restore
+    details: Backup and restore the SU permission allowlist for all previously granted apps, making it easy to recover permissions on a new device or setup.
+  - title: SuSFS controls & info
+    details: View compatibility details and basic info about SuSFS, along with controls for KPROBES hook-hiding mode.
   - title: WebUI X
-    details: WebUI X is an innovative way to manage WebUIs, which has a lot more system level APIs the module/webui developers can elevate for their needs, it also has monet support for seamless Material U look all around
-
+    details: WebUI X offers an innovative way to manage WebUIs, featuring enhanced system-level APIs that module/WebUI developers can leverage. It also includes Monet support for a consistent Material You design throughout.

@@ -11,7 +11,7 @@ export default defineConfig({
       { text: 'Installation', link: '/pages/installation' },
       { text: 'Devices', link: '/pages/devices' }
     ],
-    
+
     sidebar: [
       {
         text: 'Guide',
@@ -21,10 +21,10 @@ export default defineConfig({
         ]
       }
     ],
-    
+
     footer: {
-        message: 'Released under the GPL2 and GPL3 License.',
-        copyright: '© 2025 KernelSU Next. All rights reserved'
+        message: 'Released under the GPL 2 and GPL 3 license.',
+        copyright: '© 2025 KernelSU Next. All rights reserved.'
     },
 
     socialLinks: [

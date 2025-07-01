@@ -1,9 +1,9 @@
 # 非官方支持设备
 
 >[!info] 信息
-> 由其他开发者维护的支持 KernelSU Next 的非 GKI 设备内核
+> 由其他开发者维护的支持 KernelSU Next 的非 GKI 设备内核。
 
->[!warning] 请注意：
+>[!warning] 请注意
 > 这些内核未经过 KernelSU Next 团队审查，请在使用前自行确保其安全性！
 
 <script setup>
