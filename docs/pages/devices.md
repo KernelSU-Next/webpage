@@ -1,10 +1,10 @@
 # Unofficially supported devices
 
 >[!info]
-> Here is the list of devices unofficially supported by KernelSU Next
+> Here's the list of devices unofficially supported by KernelSU Next.
 
 >[!warning]
-> In this page, there are kernels for devices unofficially supporting KernelSU Next, maintained by other developers. So, be cautious about what you are flashing!
+> In this page, there are kernels for devices unofficially supported by KernelSU Next, maintained by other developers. So, be cautious about what you're flashing!
 
 <script setup>
 import data from '../repos.json'
