@@ -414,5 +414,13 @@
         "kernel_name": "android_kernel_samsung_ex2100",
         "kernel_link": "https://github.com/xfwdrev/android_kernel_samsung_ex2100",
         "devices": "Samsung Galaxy S21 Family (Exynos 2100, SM-G99x)"
+    },
+    {
+        "maintainer": "Hargriv",
+        "img": "https://gitlab.com/uploads/-/system/user/avatar/15786627/avatar.png?width=800",
+        "maintainer_link": "https://gitlab.com/Hargriv",
+        "kernel_name": "Exynos990-Note20Ultra-KSUNext",
+        "kernel_link": "https://gitlab.com/Hargriv/exynos990-note20ultra-ksunext",
+        "devices": "Samsung Galaxy Note20 Ultra Family (Exynos 990, C2S SM-N986B, C2SLTE SM-N985F)"
     }
 ]
