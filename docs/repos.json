@@ -422,5 +422,21 @@
         "kernel_name": "Exynos990-Note20Ultra-KSUNext",
         "kernel_link": "https://gitlab.com/Hargriv/exynos990-note20ultra-ksunext",
         "devices": "Samsung Galaxy Note20 Ultra Family (Exynos 990, C2S SM-N986B, C2SLTE SM-N985F)"
+    },
+    {
+        "img": "https://avatars.githubusercontent.com/Hargriv?v=4",
+        "maintainer_link": "https://github.com/Hargriv/",
+        "kernel_name": "exynos990-note20ultra-ksunext",
+        "kernel_link": "https://github.com/Hargriv/exynos990-note20ultra-ksunext",
+        "devices": "Samsung Note 20 Ultra -C2S- ( G986B G985F )"
+    },
+    {
+        "maintainer": "Luciiuss",
+        "img": "https://avatars.githubusercontent.com/Luciiuss?v=4",
+        "maintainer_link": "https://github.com/Luciiuss/",
+        "kernel_name": "sm-a566b",
+        "kernel_link": "https://github.com/Luciiuss/sm-a566b",
+        "devices": "Samsung Galaxy A56 (SM-A566B)"
+
     }
 ]
