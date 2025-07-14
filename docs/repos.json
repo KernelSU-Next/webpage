@@ -414,5 +414,21 @@
         "kernel_name": "android_kernel_samsung_ex2100",
         "kernel_link": "https://github.com/xfwdrev/android_kernel_samsung_ex2100",
         "devices": "Samsung Galaxy S21 Family (Exynos 2100, SM-G99x)"
+    },
+    {
+        "maintainer": "Hargriv",
+        "img": "https://avatars.githubusercontent.com/Hargriv?v=4",
+        "maintainer_link": "https://github.com/Hargriv/",
+        "kernel_name": "exynos990-note20ultra-ksunext",
+        "kernel_link": "https://github.com/Hargriv/exynos990-note20ultra-ksunext",
+        "devices": "Samsung Note 20 Ultra -C2S- ( G986B G985F )"
+    },
+    {
+        "maintainer": "Luciiuss",
+        "img": "https://avatars.githubusercontent.com/Luciiuss?v=4",
+        "maintainer_link": "https://github.com/Luciiuss/",
+        "kernel_name": "sm-a566b",
+        "kernel_link": "https://github.com/Luciiuss/sm-a566b",
+        "devices": "Samsung Galaxy A56 (SM-A566B)"
     }
 ]
