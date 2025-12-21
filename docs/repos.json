@@ -430,5 +430,13 @@
         "kernel_name": "sm-a566b",
         "kernel_link": "https://github.com/Luciiuss/sm-a566b",
         "devices": "Samsung Galaxy A56 (SM-A566B)"
+    },
+    {
+        "maintainer": "CharaDreemurrDT",
+        "img": "https://avatars.githubusercontent.com/CharaDreemurrDT?v=4",
+        "maintainer_link": "https://github.com/CharaDreemurrDT/",
+        "kernel_name": "ksun_kernel_motorola_sm6225",
+        "kernel_link": "https://github.com/CharaDreemurrDT/ksun_kernel_motorola_sm6225",
+        "devices": "Moto E7 Plus, Moto G9 Play, Moto G32, Moto G42 and Moto G52"
     }
 ]
