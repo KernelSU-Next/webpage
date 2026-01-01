@@ -104,6 +104,14 @@
         "devices": "Poco F3 (alioth)"
     },
     {
+        "maintainer": "hauzer",
+        "img": "https://avatars.githubusercontent.com/u/2883385?s=48&v=4",
+        "maintainer_link": "https://github.com/hauzer",
+        "kernel_name": "poco-f3_lineageos_kernelsu-next_susfs",
+        "kernel_link": "https://github.com/hauzer/poco-f3_lineageos_kernelsu-next_susfs",
+        "devices": "Poco F3 (alioth)"
+    },
+    {
         "maintainer": "sidex15",
         "img": "https://avatars.githubusercontent.com/sidex15?v=4",
         "maintainer_link": "https://github.com/sidex15",
