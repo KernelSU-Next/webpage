@@ -18,6 +18,7 @@ export default defineConfig({
         items: [
           { text: 'Installation', link: '/pages/installation' },
           { text: 'Devices', link: '/pages/devices' }
+          { text: 'Integration', link: '/pages/how-to-integrate-for-non-gki' }
         ]
       }
     ],
