@@ -439,6 +439,13 @@
         "kernel_name": "sm-a566b",
         "kernel_link": "https://github.com/Luciiuss/sm-a566b",
         "devices": "Samsung Galaxy A56 (SM-A566B)"
-
+    },
+    {
+        "maintainer": "IverCoder",
+        "img": "https://avatars.githubusercontent.com/IverCoder?v=4",
+        "maintainer_link": "https://github.com/IverCoder",
+        "kernel_name": "android_kernel_samsung_a03",
+        "kernel_link": "https://github.com/IverCoder/android_kernel_samsung_a03/tree/main",
+        "devices": "Samsung Galaxy A03 Core"
     }
 ]
