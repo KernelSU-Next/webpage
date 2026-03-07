@@ -226,6 +226,7 @@ Finally, build your kernel again, and KernelSU Next should work correctly.
 
 
 Credits for supporting Legacy devices:
-@sidex15 
-@maxsteeel
-@rifsxd
+
+- [@sidex15](https://github.com/sidex15)
+- [@maxsteeel](https://github.com/maxsteeel)
+- [@rifsxd](https://github.com/rifsxd)
