@@ -1,6 +1,6 @@
 # Integrate for non-GKI devices
 
-KernelSU Next can be integrated into non-GKI kernels and was backported to 5.4 and earlier versions.
+KernelSU Next can be integrated into non-GKI kernels and was backported to 4.14 and earlier versions.
 
 Due to the fragmentation of non-GKI kernels, we don't have a universal way to build them; therefore, we cannot provide a non-GKI boot.img. However, you can build the kernel with KernelSU Next integrated on your own.
 
@@ -42,7 +42,7 @@ Comment out `ksu_sucompat_init()` and `ksu_ksud_init()` in `KernelSU/kernel/ksu.
 
 ## Manually modify the kernel source
 
-If kprobe doesn't work on your kernel—either because of an upstream bug or because your kernel is older than 5.4 you can try the following approach:
+If kprobe doesn't work on your kernel—either because of an upstream bug or because your kernel is older than 4.14 you can try the following approach:
 
 First, add KernelSU Next to your kernel source tree:
 
@@ -65,36 +65,39 @@ Next, add KernelSU Next calls to the kernel source. Below are some patches for r
 diff --git a/fs/exec.c b/fs/exec.c
 --- a/fs/exec.c
 +++ b/fs/exec.c
---- a/fs/exec.c
-+++ b/fs/exec.c
-/*
- * sys_execve() executes a new program.
- */
+@@ -1886,12 +1886,26 @@ static int do_execveat_common(int fd, struct filename *filename,
+ 	return retval;
+ }
+ 
 +#ifdef CONFIG_KSU
 +__attribute__((hot))
-+extern int ksu_handle_execveat(int *fd,
-+			struct filename **filename_ptr,
-+			void *argv, void *envp, int *flags);
++extern int ksu_handle_execveat(int *fd, struct filename **filename_ptr,
++				void *argv, void *envp, int *flags);
 +#endif
 +
-static int do_execve_common(struct filename *filename,
-				struct user_arg_ptr argv,
-				struct user_arg_ptr envp)
-{
-	struct linux_binprm *bprm;
-	struct file *file;
-	struct files_struct *displaced;
-	int retval;
-
-	if (IS_ERR(filename))
-		return PTR_ERR(filename);
-
+ int do_execve(struct filename *filename,
+ 	const char __user *const __user *__argv,
+ 	const char __user *const __user *__envp)
+ {
+ 	struct user_arg_ptr argv = { .ptr.native = __argv };
+ 	struct user_arg_ptr envp = { .ptr.native = __envp };
 +#ifdef CONFIG_KSU
 +	ksu_handle_execveat((int *)AT_FDCWD, &filename, &argv, &envp, 0);
 +#endif
-	/*
-	 * We move the actual failure in case of RLIMIT_NPROC excess from
-	 * set*uid() to execve() because too many poorly written programs
+ 	return do_execveat_common(AT_FDCWD, filename, argv, envp, 0);
+ }
+ 
+@@ -1919,6 +1933,10 @@
+static int compat_do_execve(struct filename *filename,
+ 		.is_compat = true,
+ 		.ptr.compat = __envp,
+ 	};
++#ifdef CONFIG_KSU // 32-bit ksud and 32-on-64 support
++	ksu_handle_execveat((int *)AT_FDCWD, &filename, &argv, &envp, 0);
++#endif
+ 	return do_execveat_common(AT_FDCWD, filename, argv, envp, 0);
+ }
+ 
 ```
 ```diff[open.c]
 diff --git a/fs/open.c b/fs/open.c
@@ -130,69 +133,60 @@ SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
 ```diff[read_write.c]
 --- a/fs/read_write.c
 +++ b/fs/read_write.c
-@@ -429,10 +429,19 @@ ssize_t kernel_read(struct file *file, void *buf, size_t count, loff_t *pos)
+@@ -568,11 +568,21 @@ static inline void file_pos_write(struct file *file, loff_t pos)
+ 		file->f_pos = pos;
  }
- EXPORT_SYMBOL(kernel_read);
  
 +#ifdef CONFIG_KSU
 +extern bool ksu_vfs_read_hook __read_mostly;
-+extern int ksu_handle_vfs_read(struct file **file_ptr, char __user **buf_ptr,
-+			size_t *count_ptr, loff_t **pos);
++extern __attribute__((cold)) int ksu_handle_sys_read(unsigned int fd,
++				char __user **buf_ptr, size_t *count_ptr);
 +#endif
- ssize_t vfs_read(struct file *file, char __user *buf, size_t count, loff_t *pos)
++
+ SYSCALL_DEFINE3(read, unsigned int, fd, char __user *, buf, size_t, count)
  {
- 	ssize_t ret;
+ 	struct fd f = fdget_pos(fd);
+ 	ssize_t ret = -EBADF;
  
-+#ifdef CONFIG_KSU 
-+	if (unlikely(ksu_vfs_read_hook))
-+		ksu_handle_vfs_read(&file, &buf, &count, &pos);
++#ifdef CONFIG_KSU
++	if (unlikely(ksu_vfs_read_hook)) 
++		ksu_handle_sys_read(fd, &buf, &count);
 +#endif
- 	if (!(file->f_mode & FMODE_READ))
- 		return -EBADF;
- 	if (!(file->f_mode & FMODE_CAN_READ)))
+ 	if (f.file) {
+ 		loff_t pos = file_pos_read(f.file);
+ 		ret = vfs_read(f.file, buf, count, &pos);
 ```
 ```diff[stat.c]
 diff --git a/fs/stat.c b/fs/stat.c
 --- a/fs/stat.c
 +++ b/fs/stat.c
-@@ -364,X +364,XX @@  
+@@ -353,6 +353,10 @@ SYSCALL_DEFINE2(newlstat, const char __user *, filename,
+ 	return cp_new_stat(&stat, statbuf);
+ }
+ 
 +#ifdef CONFIG_KSU
-+extern void ksu_handle_newfstat_ret(unsigned int *fd, struct stat __user **statbuf_ptr);
-+#if defined(__ARCH_WANT_STAT64) || defined(__ARCH_WANT_COMPAT_STAT64)
-+extern void ksu_handle_fstat64_ret(unsigned long *fd, struct stat64 __user **statbuf_ptr); // optional
-+#endif
++__attribute__((hot)) 
++extern int ksu_handle_stat(int *dfd, const char __user **filename_user,
++				int *flags);
 +#endif
 +
-SYSCALL_DEFINE2(newfstat, unsigned int, fd, struct stat __user *, statbuf)
+
+#if !defined(__ARCH_WANT_STAT64) || defined(__ARCH_WANT_SYS_NEWFSTATAT)
+SYSCALL_DEFINE4(newfstatat, int, dfd, const char __user *, filename,
+		struct stat __user *, statbuf, int, flag)
 {
 	struct kstat stat;
-	int error = vfs_fstat(fd, &stat);
-
-	if (!error)
-		error = cp_new_stat(&stat, statbuf);
+	int error;
 
 +#ifdef CONFIG_KSU
-+	ksu_handle_newfstat_ret(&fd, &statbuf);
++	ksu_handle_stat(&dfd, &filename, &flag);
 +#endif
-	return error;
-
- 
-@@ -490,X +497,X @@
-SYSCALL_DEFINE2(fstat64, unsigned long, fd, struct stat64 __user *, statbuf)
-{
-	struct kstat stat;
-	int error = vfs_fstat(fd, &stat);
-
-	if (!error)
-		error = cp_new_stat64(&stat, statbuf);
-
-+#ifdef CONFIG_KSU // for 32-bit
-+	ksu_handle_fstat64_ret(&fd, &statbuf);
-+#endif
-	return error;
-}
+ 	error = vfs_fstatat(dfd, filename, &stat, flag);
+ 	if (error)
+ 		return error;
 ```
 ```diff[reboot.c]
+diff --git a/kernel/reboot.c b/kernel/reboot.c
 --- a/kernel/reboot.c
 +++ b/kernel/reboot.c
 @@ -277,6 +277,11 @@ 
@@ -222,70 +216,11 @@ SYSCALL_DEFINE4(reboot, int, magic1, int, magic2, unsigned int, cmd,
 
 You should find the five functions in kernel source:
 
-1. `do_faccessat`, usually in `fs/open.c`
-2. `do_execveat_common`, usually in `fs/exec.c`
+1. `do_execve`, usually in `fs/exec.c`
+2. `SYSCALL_DEFINE3`, usually in `fs/open.c`
 3. `vfs_read`, usually in `fs/read_write.c`
-4. `vfs_statx`, usually in `fs/stat.c`
-5. `sys_reboot`, usually in `kernel/reboot.c`
-
-If your kernel doesn't have the `vfs_statx` function, use `vfs_fstatat` instead:
-
-```diff
-diff --git a/fs/stat.c b/fs/stat.c
-index 068fdbcc9e26..5348b7bb9db2 100644
---- a/fs/stat.c
-+++ b/fs/stat.c
-@@ -87,6 +87,8 @@ int vfs_fstat(unsigned int fd, struct kstat *stat)
- }
- EXPORT_SYMBOL(vfs_fstat);
-
-+#ifdef CONFIG_KSU
-+extern int ksu_handle_stat(int *dfd, const char __user **filename_user, int *flags);
-+#endif
- int vfs_fstatat(int dfd, const char __user *filename, struct kstat *stat,
- 		int flag)
- {
-@@ -94,6 +96,8 @@ int vfs_fstatat(int dfd, const char __user *filename, struct kstat *stat,
- 	int error = -EINVAL;
- 	unsigned int lookup_flags = 0;
-+   #ifdef CONFIG_KSU 
-+	ksu_handle_stat(&dfd, &filename, &flag);
-+   #endif
-+
- 	if ((flag & ~(AT_SYMLINK_NOFOLLOW | AT_NO_AUTOMOUNT |
- 		      AT_EMPTY_PATH)) != 0)
- 		goto out;
-```
-
-For kernels eariler than 4.17, if you cannot find `do_faccessat`, just go to the definition of the `faccessat` syscall and place the call there:
-
-```diff
-diff --git a/fs/open.c b/fs/open.c
-index 2ff887661237..e758d7db7663 100644
---- a/fs/open.c
-+++ b/fs/open.c
-@@ -355,6 +355,9 @@ SYSCALL_DEFINE4(fallocate, int, fd, int, mode, loff_t, offset, loff_t, len)
- 	return error;
- }
-
-+#ifdef CONFIG_KSU
-+extern int ksu_handle_faccessat(int *dfd, const char __user **filename_user, int *mode,
-+			        int *flags);
-+#endif
-+
- /*
-  * access() needs to use the real uid/gid, not the effective uid/gid.
-  * We do this by temporarily clearing all FS-related capabilities and
-@@ -370,6 +373,8 @@ SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
- 	int res;
- 	unsigned int lookup_flags = LOOKUP_FOLLOW;
-+   #ifdef CONFIG_KSU
-+	ksu_handle_faccessat(&dfd, &filename, &mode, NULL);
-+   #endif
-+
- 	if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
- 		return -EINVAL;
-```
+4. `SYSCALL_DEFINE4`, usually in `fs/stat.c`
+5. `SYSCALL_DEFINE4`, usually in `kernel/reboot.c`
 
 Finally, build your kernel again, and KernelSU Next should work correctly.
 
