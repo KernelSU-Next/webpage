@@ -1,6 +1,6 @@
 # Integrate for non-GKI devices
 
-KernelSU Next can be integrated into non-GKI kernels and was backported to 4.14 and earlier versions.
+KernelSU Next can be integrated into non-GKI kernels and was backported to 5.4 and earlier versions.
 
 Due to the fragmentation of non-GKI kernels, we don't have a universal way to build them; therefore, we cannot provide a non-GKI boot.img. However, you can build the kernel with KernelSU Next integrated on your own.
 
@@ -46,7 +46,7 @@ If your kernel is older than 5.9, you should backport `path_umount` to `fs/names
 
 ## Manually modify the kernel source
 
-If kprobe doesn't work on your kernel—either because of an upstream bug or because your kernel is older than 4.8—you can try the following approach:
+If kprobe doesn't work on your kernel—either because of an upstream bug or because your kernel is older than 5.4 you can try the following approach:
 
 First, add KernelSU Next to your kernel source tree:
 
