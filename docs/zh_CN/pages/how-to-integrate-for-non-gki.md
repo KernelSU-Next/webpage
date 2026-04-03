@@ -110,9 +110,9 @@ diff --git a/fs/open.c b/fs/open.c
 +#endif
 +
 /*
- * access() 需要使用真实的 uid/gid，而非有效的 uid/gid。
- * 我们通过临时清除所有与 FS 相关的能力，
- * 并将 fsuid/fsgid 切换为真实值来实现这一点。
+ * access() needs to use the real uid/gid, not the effective uid/gid.
+ * We do this by temporarily clearing all FS-related capabilities and
+ * switching the fsuid/fsgid around to the real ones.
  */
 SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
 {
@@ -127,7 +127,7 @@ SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
 +	ksu_handle_faccessat(&dfd, &filename, &mode, NULL);
 +#endif
 +
- 	if (mode & ~S_IRWXO)	/* F_OK, X_OK, W_OK, R_OK 在哪里？ */
+ 	if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
  		return -EINVAL;
 ```
 ```diff[read_write.c]
@@ -191,7 +191,7 @@ diff --git a/kernel/reboot.c b/kernel/reboot.c
 +++ b/kernel/reboot.c
 @@ -277,6 +277,11 @@ 
   *
-  * reboot 不会同步：请在调用前自行完成同步。
+  * reboot doesn't sync: do that yourself before calling this.
   */
 +
 +#ifdef CONFIG_KSU
@@ -208,7 +208,7 @@ SYSCALL_DEFINE4(reboot, int, magic1, int, magic2, unsigned int, cmd,
 +#ifdef CONFIG_KSU 
 +	ksu_handle_sys_reboot(magic1, magic2, cmd, &arg);
 +#endif
- 	/* 只有超级用户才被信任执行系统重启。 */
+ 	/* We only trust the superuser with rebooting the system. */
  	if (!ns_capable(pid_ns->user_ns, CAP_SYS_BOOT))
  		return -EPERM;
 ```

@@ -19,7 +19,7 @@ export default defineConfig({
         items: [
           { text: '安装', link: '/zh_CN/pages/installation' },
           { text: '设备', link: '/zh_CN/pages/devices' },
-          { text: '一体化', link: '/zh_CN/pages/how-to-integrate-for-non-gki' }
+          { text: '集成', link: '/zh_CN/pages/how-to-integrate-for-non-gki' }
         ]
       }
     ],
