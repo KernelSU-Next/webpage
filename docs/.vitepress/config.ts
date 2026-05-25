@@ -5,5 +5,9 @@ import locales from './locales'
 export default defineConfig({
   title: "KernelSU Next",
   locales: locales.locales,
-  base: '/webpage/'
+  base: '/webpage/',
+  
+  head: [
+    ['link', { rel: 'icon', href: '/webpage/favicon.png' }]
+  ]
 })
