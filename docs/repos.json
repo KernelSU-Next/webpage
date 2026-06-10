@@ -447,5 +447,13 @@
         "kernel_name": "android_kernel_samsung_a03",
         "kernel_link": "https://github.com/IverCoder/android_kernel_samsung_a03/tree/main",
         "devices": "Samsung Galaxy A03 Core"
+    },
+    {
+        "maintainer": "Android-Artisan",
+        "img": "https://avatars.githubusercontent.com/u/202404092?v=4",
+        "maintainer_link": "https://github.com/Android-Artisan",
+        "kernel_name": "android_kernel_samsung_exynos990",
+        "kernel_link": "https://github.com/Android-Artisan/android_kernel_samsung_exynos990",
+        "devices": "Samsung Galaxy S20 Family (Exynos 990, SM-G98x, SM-G780F)"
     }
 ]
