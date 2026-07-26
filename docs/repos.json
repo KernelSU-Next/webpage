@@ -40,6 +40,14 @@
         "devices": "Motorola Moto G84 5G"
     },
     {
+        "maintainer": "tuxdotrs",
+        "img": "https://avatars.githubusercontent.com/tuxdotrs?v=4",
+        "maintainer_link": "https://github.com/tuxdotrs",
+        "kernel_name": "android_kernel_motorola_sm7325",
+        "kernel_link": "https://github.com/tuxdotrs/android_kernel_motorola_sm7325",
+        "devices": "Motorola Edge 30"
+    },
+    {
         "maintainer": "whyakari",
         "img": "https://avatars.githubusercontent.com/whyakari?v=4",
         "maintainer_link": "https://github.com/whyakari",
