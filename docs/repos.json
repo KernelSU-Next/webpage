@@ -1,5 +1,26 @@
 [
     {
+        "maintainer": "WildKernels",
+        "maintainer_link": "https://github.com/WildKernels",
+        "kernel_name": "OnePlus_KernelSU_SUSFS",
+        "kernel_link": "https://github.com/WildKernels/OnePlus_KernelSU_SUSFS",
+        "devices": "OnePlus Devices"
+    },
+    {
+        "maintainer": "Numbersf",
+        "maintainer_link": "https://github.com/Numbersf",
+        "kernel_name": "Action-Build",
+        "kernel_link": "https://github.com/Numbersf/Action-Build",
+        "devices": "OnePlus Devices"
+    },
+    {
+        "maintainer": "Bouteillepleine",
+        "maintainer_link": "https://github.com/Bouteillepleine",
+        "kernel_name": "OnePlus-KsuNext_NMS",
+        "kernel_link": "https://github.com/Bouteillepleine/OnePlus-KsuNext_NMS",
+        "devices": "OnePlus Devices"
+    },
+    {
         "maintainer": "rifsxd",
         "img": "https://avatars.githubusercontent.com/rifsxd?v=4",
         "maintainer_link": "https://github.com/rifsxd",
@@ -22,6 +43,13 @@
         "kernel_name": "android_kernel_huawei_hi6250",
         "kernel_link": "https://github.com/utkustnr/android_kernel_huawei_hi6250",
         "devices": "Huawei P20 lite (ANE) & P Smart (FIG)"
+    },
+    {
+        "maintainer": "WildKernels",
+        "maintainer_link": "https://github.com/WildKernels",
+        "kernel_name": "Samsung_KernelSU_SUSFS",
+        "kernel_link": "https://github.com/WildKernels/Samsung_KernelSU_SUSFS",
+        "devices": "Samsung Devices"
     },
     {
         "maintainer": "DrRoot85",
