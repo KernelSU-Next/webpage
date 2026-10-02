@@ -491,5 +491,13 @@
         "kernel_name": "android_kernel_samsung_exynos990",
         "kernel_link": "https://github.com/Android-Artisan/android_kernel_samsung_exynos990",
         "devices": "Samsung Galaxy S20 Family (Exynos 990, SM-G98x, SM-G780F)"
+    },
+    {
+        "maintainer": "heStudio Community",
+        "img": "https://avatars.githubusercontent.com/u/144829595?v=4",
+        "maintainer_link": "https://github.com/hestudio-community",
+        "kernel_name": "android_kernel_xiaomi_violet",
+        "kernel_link": "https://github.com/hestudio-community/android_kernel_xiaomi_violet",
+        "devices": "Redmi Note 7 Pro (xiaomi,sm6150,violet)"
     }
 ]
