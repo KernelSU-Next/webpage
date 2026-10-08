@@ -396,6 +396,13 @@
         "devices": "Pixel 5 Series | Snapdragon 765G"
     },
     {
+        "maintainer": "7WayneLee",
+        "maintainer_link": "https://github.com/7WayneLee",
+        "kernel_name": "pixel5-kernelsu-next",
+        "kernel_link": "https://github.com/7WayneLee/pixel5-kernelsu-next",
+        "devices": "Pixel 5 (redfin), stock Android 14 UP1A.231105.001.B2"
+    },
+    {
         "maintainer": "midozalouk",
         "img": "https://avatars.githubusercontent.com/midozalouk?v=4",
         "maintainer_link": "https://github.com/midozalouk",
