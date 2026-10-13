@@ -491,5 +491,29 @@
         "kernel_name": "android_kernel_samsung_exynos990",
         "kernel_link": "https://github.com/Android-Artisan/android_kernel_samsung_exynos990",
         "devices": "Samsung Galaxy S20 Family (Exynos 990, SM-G98x, SM-G780F)"
+    },
+    {
+        "maintainer": "tingao",
+        "img": "https://avatars.githubusercontent.com/u/12323444?v=4",
+        "maintainer_link": "https://github.com/tingao",
+        "kernel_name": "s10plus-snapdragon-droidspaces-kernel",
+        "kernel_link": "https://github.com/tingao/s10plus-snapdragon-droidspaces-kernel",
+        "devices": "Samsung Galaxy S10+ Snapdragon (SM-G9750)"
+    },
+    {
+        "maintainer": "tingao",
+        "img": "https://avatars.githubusercontent.com/u/12323444?v=4",
+        "maintainer_link": "https://github.com/tingao",
+        "kernel_name": "saipan-droidspaces-kernel",
+        "kernel_link": "https://github.com/tingao/saipan-droidspaces-kernel",
+        "devices": "Motorola moto g(50) 5G (XT2149-1)"
+    },
+    {
+        "maintainer": "tingao",
+        "img": "https://avatars.githubusercontent.com/u/12323444?v=4",
+        "maintainer_link": "https://github.com/tingao",
+        "kernel_name": "galaxy-s21-kernel-droidspaces",
+        "kernel_link": "https://github.com/tingao/galaxy-s21-kernel-droidspaces",
+        "devices": "Samsung Galaxy S21 5G (SM-G9910)"
     }
 ]
